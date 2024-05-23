@@ -1,0 +1,202 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #163120; 
+    color: #f0bc31; 
+    text-align: center;
+    padding: 10px 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - (header height + footer height)); /* Adjust according to header and footer height */
+    overflow: hidden;
+}
+
+.box {
+    display:flex;
+}
+
+.header-left, .header-middle, .header-right {
+    flex: 1;
+    
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-left img {
+    max-width: 65%;
+    max-height: 65%;
+}
+
+.header-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-left, .main-right {
+    flex: 1; 
+    height: 100vh; 
+}
+
+.main-left {
+    background-color: #f0f0f0;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.main-left img {
+    max-width: 125%;
+    max-height: 125%;
+}
+
+.floating-text-box {
+    position: absolute;
+    right: -5%;
+    top: 60%; /* Adjust this value to move the box down */
+    transform: translateY(0%); /* Center the box vertically */
+    background-color: #163120; 
+    color: #ffffff;
+    padding: 40px;
+    height: 120px;
+    width: 180px; /* Adjust width as needed */
+    box-shadow: 20px solid #000000;
+    text-align: right; /* Align text to the right */
+}
+
+.floating-text-box p {
+    margin: 0; /* Remove default margin */
+    
+}
+
+.floating-text-box h2 {
+    margin: 0; /* Remove default margin */
+    text-size-adjust: 200%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.main-right {
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    padding-left: 60px;
+    box-sizing: border-box;
+}
+
+.main-right img {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+.main-right h1 {
+    margin: 0 0 20px 0;
+    font-size: 300%;
+    color: #163120;
+    text-align: right;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.main-right h3 {
+    margin: 0 0 20px 0;
+    color: #163120;
+    text-align: right;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.main-right p {
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.main-right a {
+    color: #ffffff;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-right a:hover {
+    color: #163120;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
+    gap: 4px; /* Add a gap between the buttons */
+}
+
+.small-button {
+    display: block;
+    width: 150px; /* Fixed width */
+    height: 22px; /* Fixed height */
+    line-height: 21px; /* Center text vertically */
+    background-color: #ffffff; 
+    color: #163120; 
+    text-decoration: none;
+    border-radius: 20px; 
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.small-button:hover {
+    background-color: #f0bc31;
+    color: #163120;
+}
+
+.small-button:active {
+    background-color: #0f2514; 
+    color: #d9a22a;
+}
+
+.large-button {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #163120; 
+    color: #f0bc31; 
+    text-decoration: none;
+    border-radius: 15px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.large-button:hover {
+    background-color: #f0bc31;
+    color: #163120;
+}
+
+.large-button:active {
+    background-color: #0f2514; 
+    color: #d9a22a;
+}
+
+.large-button:no-active {
+    background-color: #163120 !important;
+    color: #ffffff !important;
+}
