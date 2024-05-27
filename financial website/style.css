@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-header, footer {
+header {
     background-color: #163120; 
     color: #f0bc31; 
     text-align: center;
@@ -14,7 +14,22 @@ header, footer {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-header h1, footer p {
+footer {
+    background-image: url(assets/backgroundhexagon-gradient-transparent.png);
+    background-size: cover;
+    background-color: #202020; 
+    color: #f0f0f0; 
+    text-align: center;
+    padding: 10px 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+header h1, h3, h5, p {
+    margin: 0;
+}
+
+footer h1, h3, h5, p {
     margin: 0;
 }
 
@@ -25,12 +40,16 @@ header h1, footer p {
 }
 
 .box {
+    display: flex;
+}
+
+.element {
     display:flex;
+    justify-content: flex-end;
 }
 
 .header-left, .header-middle, .header-right {
     flex: 1;
-    
 }
 
 .header-left {
@@ -40,8 +59,8 @@ header h1, footer p {
 }
 
 .header-left img {
-    max-width: 65%;
-    max-height: 65%;
+    max-width: 60%;
+    max-height: 60%;
 }
 
 .header-middle {
@@ -56,12 +75,48 @@ header h1, footer p {
     justify-content: center;
 }
 
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    padding-top: 3%;
+    padding-bottom: 5%
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left:10%;
+}
+
+.footer-left img {
+    max-width: 85%;
+    max-height: 85%;
+}
+
+.footer-middle {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10%;
+}
+
+.copyright {
+    padding-bottom: 1%;
+}
+
 .main-left, .main-right {
     flex: 1; 
     height: 100vh; 
 }
 
 .main-left {
+    
     background-color: #f0f0f0;
     position: relative; 
     display: flex;
@@ -199,4 +254,56 @@ header h1, footer p {
 .large-button:no-active {
     background-color: #163120 !important;
     color: #ffffff !important;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
+    gap: 10px; /* Add a gap between the buttons */
+}
+
+.minor-button {
+    display: block;
+    color: #a0a0a0; 
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.minor-button:hover {
+    color: #ffffff;
+}
+
+.minor-button:active {
+    color: #d9a22a;
+}
+
+.scroll-to-top {
+    padding: 20px;
+    display: none; 
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #163120; 
+    color: #ffffff; 
+    border-radius: 15px; 
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+    width:auto;
+}
+
+.scroll-to-top img {
+    width: 50px; /* Adjust the size of the arrow image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.scroll-to-top:hover {
+    background-color: #f0bc31;
+    color: #163120;
+}
+
+.scroll-to-top:active {
+    background-color: #0f2514; 
+    color: #d9a22a;
 }

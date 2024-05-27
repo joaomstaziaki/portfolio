@@ -15,7 +15,7 @@
     <header>
         <div class="box">
             <div class="header-left">
-                <img src="assets/staziaki-logo-card-2.png" alt="Card" class="logo-card">
+                <img src="assets/staziaki-logo-card.png" alt="Card" class="logo-card">
             </div>
             <div class="header-middle">
                 
@@ -34,6 +34,12 @@
         </div>
     </header>
 
+    <div class="element">
+        <a href="#" class="scroll-to-top">
+            <img src="assets/arrow.png" alt="↑">
+        </a>
+    </div>
+
     <div class="container">
         <div class="main-left">
             <img src="assets/geraldo-staziaki-front-picture.jpg" alt="Front image of Geraldo Staziaki">
@@ -48,13 +54,32 @@
             <p id="description1">Renomado consultor financeiro especializado em educação financeira, tem desempenhado um papel crucial na capacitação de famílias e indivíduos para alcançarem seus objetivos financeiros e construírem um patrimônio sólido para as gerações futuras.</p>
             <p id="description2">Com uma abordagem personalizada e analítica, Staziaki mergulha fundo nas necessidades financeiras específicas de cada família, proporcionando uma análise abrangente para identificar oportunidades de melhoria e áreas de foco. "Acredito que a educação financeira é a chave para o sucesso financeiro a longo prazo. Minha missão é capacitar as famílias a tomarem decisões informadas e estratégicas para garantir um futuro financeiramente saudável", afirma Staziaki.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScdEOepQyqYA-_iUvrxCk5hcUc_tmcZLSsMVBwfF46cdf0yrQ/viewform" class="large-button" id="cta-button">
-                <span>Comece ao clicar aqui</span>
+                <span>Clique aqui para começar</span>
             </a>
         </div>
     </div>
 
+    <div class="container">
+        <p> </p>
+    </div>
+
     <footer>
         <div class="box">
+            <div class="footer-left">
+                <img src="assets/staziaki-card-white-transparent.png" alt="Card" class="logo-card">
+            </div>
+            <div class="footer-middle footer-buttons">
+                <h3 id="socials">Mídias Sociais</h3>
+                <a href="https://www.instagram.com/geraldostaziaki/" class="minor-button">Instagram</a>
+                <a href="https://www.youtube.com/@EDUQUESEFINANCIAL" class="minor-button">Youtube</a>
+            </div>
+            <div class="footer-right footer-buttons">
+                <h3 id="contact">Contatos</h3>
+                <p>+1 (561) 929 9068</p>
+                <a href="gstaziaki@uniagrowth.com" class="minor-button">gstaziaki@uniagrowth.com</a>
+            </div>
+        </div>
+        <div class="copyright">
             <p id="footer-text">&copy; 2024 Geraldo Staziaki. Todos os direitos reservados.</p>
         </div>
     </footer>
@@ -62,14 +87,16 @@
     <script src="jquery.js"></script>
     <script>
 
-const content = {
+        const content = {
             en: {
                 quote: "The best time to invest is 20 years ago",
                 since: "Since 2000",
                 name: "Geraldo Staziaki",
                 description1: "Renowned financial consultant specializing in financial education, has played a crucial role in empowering families and individuals to achieve their financial goals and build solid wealth for future generations.",
                 description2: "With a personalized and analytical approach, Staziaki dives deep into the specific financial needs of each family, providing a comprehensive analysis to identify opportunities for improvement and areas of focus. 'I believe that financial education is the key to long-term financial success. My mission is to empower families to make informed and strategic decisions to ensure a financially healthy future,' says Staziaki.",
-                cta: "Start by clicking here",
+                cta: "Click here to begin",
+                socials: "Social Media",
+                contact: "Contact",
                 footer: "&copy; 2024 Geraldo Staziaki. All rights reserved."
             },
             pt: {
@@ -78,7 +105,9 @@ const content = {
                 name: "Geraldo Staziaki",
                 description1: "Renomado consultor financeiro especializado em educação financeira, tem desempenhado um papel crucial na capacitação de famílias e indivíduos para alcançarem seus objetivos financeiros e construírem um patrimônio sólido para as gerações futuras.",
                 description2: "Com uma abordagem personalizada e analítica, Staziaki mergulha fundo nas necessidades financeiras específicas de cada família, proporcionando uma análise abrangente para identificar oportunidades de melhoria e áreas de foco. 'Acredito que a educação financeira é a chave para o sucesso financeiro a longo prazo. Minha missão é capacitar as famílias a tomarem decisões informadas e estratégicas para garantir um futuro financeiramente saudável', afirma Staziaki.",
-                cta: "Comece ao clicar aqui",
+                cta: "Clique aqui para começar",
+                socials: "Redes Sociais",
+                contact: "Contatos",
                 footer: "&copy; 2024 Geraldo Staziaki. Todos os direitos reservados."
             },
             es: {
@@ -87,7 +116,9 @@ const content = {
                 name: "Geraldo Staziaki",
                 description1: "Renombrado consultor financiero especializado en educación financiera, ha jugado un papel crucial en empoderar a familias e individuos para lograr sus objetivos financieros y construir una riqueza sólida para las generaciones futuras.",
                 description2: "Con un enfoque personalizado y analítico, Staziaki se sumerge profundamente en las necesidades financieras específicas de cada familia, proporcionando un análisis integral para identificar oportunidades de mejora y áreas de enfoque. 'Creo que la educación financiera es la clave para el éxito financiero a largo plazo. Mi misión es capacitar a las familias para que tomen decisiones informadas y estratégicas para asegurar un futuro financieramente saludable', dice Staziaki.",
-                cta: "Comienza haciendo clic aquí",
+                cta: "Haz un click aquí para empezar",
+                socials: "Redes Sociales",
+                contact: "Contactos",
                 footer: "&copy; 2024 Geraldo Staziaki. Todos los derechos reservados."
             }
         };
@@ -104,6 +135,8 @@ const content = {
                 $('#description1').text(langContent.description1);
                 $('#description2').text(langContent.description2);
                 $('#cta-button span').text(langContent.cta);
+                $('#socials').html(langContent.socials);
+                $('#contact').html(langContent.contact);
                 $('#footer-text').html(langContent.footer);
             });
 
@@ -125,9 +158,21 @@ const content = {
                 $('.button').removeClass('active');
             });
 
-        });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 25) {
+                    $('.scroll-to-top').fadeIn();
+                } else {
+                    $('.scroll-to-top').fadeOut();
+                }
+            });
 
-        
+            // Click event to scroll to top
+            $('.scroll-to-top').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
+
+        });
 
     </script>
 </body>
