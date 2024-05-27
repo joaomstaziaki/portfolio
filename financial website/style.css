@@ -7,6 +7,8 @@ body, html {
 }
 
 header {
+    background-image: url(assets/backgroundhexagon-green.png);
+    background-size: cover;
     background-color: #163120; 
     color: #f0bc31; 
     text-align: center;
@@ -116,7 +118,6 @@ footer h1, h3, h5, p {
 }
 
 .main-left {
-    
     background-color: #f0f0f0;
     position: relative; 
     display: flex;
@@ -127,6 +128,41 @@ footer h1, h3, h5, p {
 .main-left img {
     max-width: 125%;
     max-height: 125%;
+    justify-content: right;
+}
+
+.main-left h1 {
+    margin: 0 0 20px 0;
+    font-size: 300%;
+    color: #163120;
+    text-align: right;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex-direction: column;
+}
+
+.main-left h3 {
+    margin: 0 0 20px 0;
+    color: #163120;
+    text-align: right;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex-direction: column;
+}
+
+.main-left p {
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.main-left a {
+    color: #ffffff;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex-direction: column;
+}
+
+.main-left a:hover {
+    color: #163120;
 }
 
 .floating-text-box {
@@ -198,6 +234,12 @@ footer h1, h3, h5, p {
 
 .main-right a:hover {
     color: #163120;
+}
+
+.main-right iframe {
+    width: 800px; /* Adjust width as needed */
+    max-width: 1280px; /* Set maximum width */
+    height: 420px; /* Maintain aspect ratio */
 }
 
 .header-buttons {
@@ -294,8 +336,8 @@ footer h1, h3, h5, p {
 }
 
 .scroll-to-top img {
-    width: 50px; /* Adjust the size of the arrow image */
-    height: auto; /* Maintain aspect ratio */
+    width: 50px; 
+    height: auto; 
 }
 
 .scroll-to-top:hover {
