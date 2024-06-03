@@ -38,17 +38,47 @@
     </div>
 
     <div class="container">
-        <div class="main-left">
-            <h3>Questionario?</h3>
-            <p id="">Nome, Idade, Telefone, e pais?</p>
-            <p id="">Qual a sua maior duvida e motivo do contato?</p>
-            <a href="#" class="large-button" id="send-button">
-                <span>Enviar</span>
-            </a>
+        <div class="main-left column-orientated">
+            <form id="questionnaire-form" action="survey.php" method="post">
+                <h3 id="questionnaire">Por favor preencha as seguintes informações</h3>
+                <label id="qname" for="name">Qual é o seu nome?</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label id="qage" for="age">Qual é a sua idade?</label>
+                <input type="number" id="age" name="age" required>
+                
+                <label id="qphone" for="telephone">Qual é o seu telefone?</label>
+                <input type="tel" id="telephone" name="telephone" required>
+                
+                <label id="qcountry" for="country">Qual é o seu país?</label>
+                <input type="text" id="country" name="country" required>
+                
+                <label id="qaction" for="action">Qual ação você ja tomou em relação a suas finanças?</label>
+                <select id="action" name="action" required>
+                    <option id="protection" value="protection">Proteção (beneficio em vida)</option>
+                    <option id="accumulation" value="accumulation">Acumulação (planos de aposentadoria)</option>
+                    <option id="leverage" value="leverage">Alavancagem (plano com ajuda financeira)</option>
+                    <option id="nothing" value="nothing">Nenhuma ação ainda</option>
+                </select>
+
+                <label id="qincome" for="income">Qual é o seu rendimento anual em dolares?</label>
+                <select id="income" name="income" required>
+                    <option id="twentyk">$20,000 - $50,000</option>
+                    <option id="fiftyk">$50,000 - $100,000</option>
+                    <option id="hundredk">$100,000 - $200,000</option>
+                    <option id="twohundredk">Over $200,000</option>
+                </select>
+                
+                <button type="submit" class="large-button" id="sendbutton">
+                    <span>Enviar</span>
+                </button>
+
+            </form>
+            
         </div>
         <div class="main-right">
-            <iframe width="1000px" height="800px" src="https://www.youtube.com/watch?v=wVdBnwm9Qqc" frameborder="0" allowfullscreen></iframe>
-            <h1>Content Title</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XShGYFXVy-g?si=4t4AENN8KgPamDdi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h1 id="contenttitle">Introdução a Financial Solutions</h1>
         </div>
     </div>
 
@@ -85,19 +115,59 @@
                 
                 socials: "Social Media",
                 contact: "Contact",
-                footer: "&copy; 2024 Geraldo Staziaki. All rights reserved."
+                footer: "&copy; 2024 Geraldo Staziaki. All rights reserved.",
+                questionnaire: "Please fill out the following information.",
+                qname: "What is your name?",
+                qage: "What is your age?",
+                qphone: "What is your phone number?",
+                qcountry: "What is your country?",
+                qaction: "What action have you taken in regards to your finances?",
+                protection: "Protection",
+                accumulation: "Accumulation",
+                leverage: "Leverage",
+                nothing: "No action yet",
+                qincome: "What is your yearly income in dollars?",
+                sendbutton: "Send",
+                contenttitle: "Introduction to Financial Solutions"
+                
             },
             pt: {
                 
                 socials: "Redes Sociais",
                 contact: "Contatos",
-                footer: "&copy; 2024 Geraldo Staziaki. Todos os direitos reservados."
+                footer: "&copy; 2024 Geraldo Staziaki. Todos os direitos reservados.",
+                questionnaire: "Por favor preencha as seguintes informações.",
+                qname: "Qual é o seu nome?",
+                qage: "Qual é a sua idade?",
+                qphone: "Qual é o seu telefone?",
+                qcountry: "Qual é o seu país?",
+                qaction: "Qual ação você ja tomou em relação a suas finanças?",
+                protection: "Proteção (beneficio em vida)",
+                accumulation: "Acumulação (planos de aposentadoria)",
+                leverage: "Alavancagem (plano com ajuda financeira)",
+                nothing: "Nenhuma ação ainda",
+                qincome: "Qual é o seu rendimento anual em dolares?",
+                sendbutton: "Enviar",
+                contenttitle: "Introdução a Financial Solutions"
             },
             es: {
                 
                 socials: "Redes Sociales",
                 contact: "Contactos",
-                footer: "&copy; 2024 Geraldo Staziaki. Todos los derechos reservados."
+                footer: "&copy; 2024 Geraldo Staziaki. Todos los derechos reservados.",
+                questionnaire: "Por favor complete la siguiente información.",
+                qname: "¿Cuál es tu nombre?",
+                qage: "¿Cuál es tu edad?",
+                qphone: "¿Cuál es tu número de teléfono?",
+                qcountry: "¿Cuál es tu país?",
+                qaction: "¿Qué acción has tomado con respecto a tus finanzas?",
+                protection: "Protección",
+                accumulation: "Acumulación",
+                leverage: "Apalancamiento",
+                nothing: "Ninguna acción aún",
+                qincome: "¿Cuál es tu ingreso anual en dólares?",
+                sendbutton: "Enviar",
+                contenttitle: "Introducción a Financial Solutions"
             }
         };
 
@@ -119,6 +189,18 @@
                 $('#socials').html(langContent.socials);
                 $('#contact').html(langContent.contact);
                 $('#footer-text').html(langContent.footer);
+                $('#questionnaire').html(langContent.questionnaire);
+                $('#qname').html(langContent.qname);
+                $('#qage').html(langContent.qage);
+                $('#qphone').html(langContent.qphone);
+                $('#qcountry').html(langContent.qcountry);
+                $('#qaction').html(langContent.qaction);
+                $('#protection').html(langContent.protection);
+                $('#accumulation').html(langContent.accumulation);
+                $('#leverage').html(langContent.leverage);
+                $('#nothing').html(langContent.nothing);
+                $('#qincome').html(langContent.qincome);
+                $('#sendbutton').val(langContent.sendbutton);
             });
 
             $('.button').on('mousedown', function() {
@@ -151,6 +233,25 @@
                 e.preventDefault();
                 $('html, body').animate({ scrollTop: 0 }, '300');
             });
+
+            $('#questionnaire-form').on('submit', function(event) {
+            event.preventDefault();
+            
+            var formData = {
+                name: $('#name').val(),
+                age: $('#age').val(),
+                telephone: $('#telephone').val(),
+                country: $('#country').val(),
+                action: $('#action').val(),
+                income: $('#income').val()
+            };
+
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            alert('Form submitted successfully!');
+
+            this.reset();
+    });
 
         });
 

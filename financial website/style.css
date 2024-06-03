@@ -3,11 +3,11 @@ body, html {
     padding: 0;
     box-sizing: border-box;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
-    background-image: url(assets/backgroundhexagon-green.png);
+    background-image: url(assets/headerbanner.png);
     background-size: cover;
     background-color: #163120; 
     color: #f0bc31; 
@@ -48,6 +48,16 @@ footer h1, h3, h5, p {
 .element {
     display:flex;
     justify-content: flex-end;
+}
+
+.column-orientated {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    padding-left: 60px;
+    box-sizing: border-box;
 }
 
 .header-left, .header-middle, .header-right {
@@ -118,6 +128,8 @@ footer h1, h3, h5, p {
 }
 
 .main-left {
+    background-image: url(assets/backgroundhexagon-gray.png);
+    background-size: cover;
     background-color: #f0f0f0;
     position: relative; 
     display: flex;
@@ -207,7 +219,7 @@ footer h1, h3, h5, p {
 }
 
 .main-right h1 {
-    margin: 0 0 20px 0;
+    margin: 0 0 20px 20px;
     font-size: 300%;
     color: #163120;
     text-align: right;
@@ -240,6 +252,7 @@ footer h1, h3, h5, p {
     width: 800px; /* Adjust width as needed */
     max-width: 1280px; /* Set maximum width */
     height: 420px; /* Maintain aspect ratio */
+    padding-bottom: 40px;
 }
 
 .header-buttons {
@@ -277,11 +290,12 @@ footer h1, h3, h5, p {
     display: inline-block;
     padding: 20px 40px;
     background-color: #163120; 
-    color: #f0bc31; 
+    color: #ffffff; 
     text-decoration: none;
     border-radius: 15px; 
     transition: background-color 0.3s, color 0.3s;
 }
+
 
 .large-button:hover {
     background-color: #f0bc31;
@@ -349,3 +363,19 @@ footer h1, h3, h5, p {
     background-color: #0f2514; 
     color: #d9a22a;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+label, input, select, button {
+    margin-bottom: 10px;
+}
+
+button {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
