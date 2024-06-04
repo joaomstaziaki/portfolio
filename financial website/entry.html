@@ -5,6 +5,8 @@
     
     <link rel="icon" href="assets/staziaki-favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.js"></script>
 </head>
 
 <body>
@@ -12,7 +14,9 @@
     <header>
         <div class="box">
             <div class="header-left">
-                <img src="assets/staziaki-card-yellow-transparent.png" alt="Card" class="logo-card">
+                <a href="index.html" class="home-link">
+                    <img src="assets/staziaki-card-yellow-transparent.png" alt="Card" class="logo-card">
+                </a>
             </div>
             <div class="header-middle">
                 
@@ -37,10 +41,11 @@
         </a>
     </div>
 
-    <div class="container">
+    <div class="box">
         <div class="main-left column-orientated">
             <form id="questionnaire-form" action="survey.php" method="post">
                 <h3 id="questionnaire">Por favor preencha as seguintes informações</h3>
+                
                 <label id="qname" for="name">Qual é o seu nome?</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -53,6 +58,12 @@
                 <label id="qcountry" for="country">Qual é o seu país?</label>
                 <input type="text" id="country" name="country" required>
                 
+                <label for="qdoubt">Qual é a sua maior duvida e o motivo de seu contato?</label>
+                <textarea id="doubt" name="doubt" rows="4" cols="50"></textarea>
+
+                <label for="qobjective">Qual é o seu objetivo financeiro no momento?</label>
+                <textarea id="objective" name="objective" rows="4" cols="50"></textarea>
+
                 <label id="qaction" for="action">Qual ação você ja tomou em relação a suas finanças?</label>
                 <select id="action" name="action" required>
                     <option id="protection" value="protection">Proteção (beneficio em vida)</option>
@@ -66,9 +77,11 @@
                     <option id="twentyk">$20,000 - $50,000</option>
                     <option id="fiftyk">$50,000 - $100,000</option>
                     <option id="hundredk">$100,000 - $200,000</option>
-                    <option id="twohundredk">Over $200,000</option>
+                    <option id="twohundredk">$200,000 +</option>
                 </select>
                 
+                <div id="calendar"></div>
+
                 <button type="submit" class="large-button" id="sendbutton">
                     <span>Enviar</span>
                 </button>
@@ -234,6 +247,18 @@
                 $('html, body').animate({ scrollTop: 0 }, '300');
             });
 
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    // Add your FullCalendar options here
+                    selectable: true,
+                    select: function(info) {
+                    console.log('Selected:', info);
+                    }
+                });
+                calendar.render();
+            });
+
             $('#questionnaire-form').on('submit', function(event) {
             event.preventDefault();
             
@@ -251,7 +276,7 @@
             alert('Form submitted successfully!');
 
             this.reset();
-    });
+        });
 
         });
 
