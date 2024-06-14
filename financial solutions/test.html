@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GERALDO STAZIAKI FINANCIAL SOLUTIONS HOME PAGE</title>
+    
+    <link rel="icon" href="assets/staziaki-favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="box">
+            <div class="header-left">
+                <img src="assets/staziaki-card-yellow-transparent.png" alt="Card" class="logo-card">
+            </div>
+            <div class="header-middle">
+                
+            </div>
+            <div class="header-right header-buttons">
+                <a href="#" class="small-button" data-language="pt">
+                    <span>Português</span>
+                </a>
+                <a href="#" class="small-button"  data-language="en">
+                    <span>English</span>
+                </a>
+                <a href="#" class="small-button"  data-language="es">
+                    <span>Español</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="element">
+        <a href="#" class="scroll-to-top">
+            <img src="assets/arrow.png" alt="↑">
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="main-left">
+            <img src="assets/geraldo-staziaki-front-picture.jpg" alt="Front image of Geraldo Staziaki">
+            <div class="floating-text-box">
+                <h2 id="quote-text-box">O melhor momento de investir é 20 anos atrás</h2>
+            </div>
+        </div>
+        <div class="main-right">
+            <h3 id="since">Desde 2000</h3>
+            <h1 id="name">Geraldo Staziaki</h1>
+            <p id="description1">Renomado consultor financeiro especializado em educação financeira, tem desempenhado um papel crucial na capacitação de famílias e indivíduos para alcançarem seus objetivos financeiros e construírem um patrimônio sólido para as gerações futuras.</p>
+            <p id="description2">Com uma abordagem personalizada e analítica, Staziaki mergulha fundo nas necessidades financeiras específicas de cada família, proporcionando uma análise abrangente para identificar oportunidades de melhoria e áreas de foco. "Acredito que a educação financeira é a chave para o sucesso financeiro a longo prazo. Minha missão é capacitar as famílias a tomarem decisões informadas e estratégicas para garantir um futuro financeiramente saudável", afirma Staziaki.</p>
+            <a href="entry.html" class="large-button" id="cta-button">
+                <span>Clique aqui para começar</span>
+            </a>
+            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScdEOepQyqYA-_iUvrxCk5hcUc_tmcZLSsMVBwfF46cdf0yrQ/viewform" class="large-button" id="cta-button">
+                <span>Clique aqui para começar</span>
+            </a> -->
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="main-left column-orientated">
+            <form id="questionnaire-form" action="survey.php" method="post">
+                <h3 id="questionnaire">Por favor preencha as seguintes informações</h3>
+                
+                <div class="input-group">
+                    <label id="qname" for="name">Qual é o seu nome?</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="qage" for="age">Qual é a sua idade?</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="qphone" for="telephone">Qual é o seu telefone?</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="qcountry" for="country">Qual é o seu país?</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="qdoubt">Qual é a sua maior duvida e o motivo de seu contato?</label>
+                    <textarea id="doubt" name="doubt" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="qobjective">Qual é o seu objetivo financeiro no momento?</label>
+                    <textarea id="objective" name="objective" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label id="qaction" for="action">Qual ação você ja tomou em relação a suas finanças?</label>
+                    <select id="action" name="action" required>
+                        <option id="protection" value="protection">Proteção (beneficio em vida)</option>
+                        <option id="accumulation" value="accumulation">Acumulação (planos de aposentadoria)</option>
+                        <option id="leverage" value="leverage">Alavancagem (plano com ajuda financeira)</option>
+                        <option id="nothing" value="nothing">Nenhuma ação ainda</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label id="qincome" for="income">Qual é o seu rendimento anual em dolares?</label>
+                    <select id="income" name="income" required>
+                        <option id="twentyk">$20,000 - $50,000</option>
+                        <option id="fiftyk">$50,000 - $100,000</option>
+                        <option id="hundredk">$100,000 - $200,000</option>
+                        <option id="twohundredk">$200,000 +</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div id="calendar"></div>
+                </div>
+                
+                <button type="submit" class="large-button" id="sendbutton">
+                    <span>Enviar</span>
+                </button>
+
+            </form>
+            
+        </div>
+        <div class="main-right">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XShGYFXVy-g?si=4t4AENN8KgPamDdi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h1 id="contenttitle">Introdução a Financial Solutions</h1>
+        </div>
+    </div>
+
+    <footer>
+        <div class="box">
+            <div class="footer-left">
+                <img src="assets/staziaki-card-white-transparent.png" alt="Card" class="logo-card">
+            </div>
+            <div class="footer-middle footer-buttons">
+                <h3 id="socials">Redes Sociais</h3>
+                <a href="https://www.instagram.com/geraldostaziaki/" class="minor-button">Instagram</a>
+                <a href="https://www.youtube.com/@EDUQUESEFINANCIAL" class="minor-button">Youtube</a>
+            </div>
+            <div class="footer-right footer-buttons">
+                <h3 id="contact">Contatos</h3>
+                <p>+1 (561) 929 9068</p>
+                <a href="gstaziaki@uniagrowth.com" class="minor-button">gstaziaki@uniagrowth.com</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p id="footer-text">&copy; 2024 Geraldo Staziaki. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="jquery.js"></script>
+    <script>
+
+        const content = {
+            en: {
+                quote: "The best time to invest is 20 years ago",
+                since: "Since 2000",
+                name: "Geraldo Staziaki",
+                description1: "Renowned financial consultant specializing in financial education, has played a crucial role in empowering families and individuals to achieve their financial goals and build solid wealth for future generations.",
+                description2: "With a personalized and analytical approach, Staziaki dives deep into the specific financial needs of each family, providing a comprehensive analysis to identify opportunities for improvement and areas of focus. 'I believe that financial education is the key to long-term financial success. My mission is to empower families to make informed and strategic decisions to ensure a financially healthy future,' says Staziaki.",
+                cta: "Click here to begin",
+                questionnaire: "Please fill out the following information.",
+                qname: "What is your name?",
+                qage: "What is your age?",
+                qphone: "What is your phone number?",
+                qcountry: "What is your country?",
+                qaction: "What action have you taken in regards to your finances?",
+                protection: "Protection",
+                accumulation: "Accumulation",
+                leverage: "Leverage",
+                nothing: "No action yet",
+                qincome: "What is your yearly income in dollars?",
+                sendbutton: "Send",
+                contenttitle: "Introduction to Financial Solutions",
+                socials: "Social Media",
+                contact: "Contact",
+                footer: "&copy; 2024 Geraldo Staziaki. All rights reserved."
+            },
+            pt: {
+                quote: "O melhor momento de investir é 20 anos atrás",
+                since: "Desde 2000",
+                name: "Geraldo Staziaki",
+                description1: "Renomado consultor financeiro especializado em educação financeira, tem desempenhado um papel crucial na capacitação de famílias e indivíduos para alcançarem seus objetivos financeiros e construírem um patrimônio sólido para as gerações futuras.",
+                description2: "Com uma abordagem personalizada e analítica, Staziaki mergulha fundo nas necessidades financeiras específicas de cada família, proporcionando uma análise abrangente para identificar oportunidades de melhoria e áreas de foco. 'Acredito que a educação financeira é a chave para o sucesso financeiro a longo prazo. Minha missão é capacitar as famílias a tomarem decisões informadas e estratégicas para garantir um futuro financeiramente saudável', afirma Staziaki.",
+                cta: "Clique aqui para começar",
+                questionnaire: "Por favor preencha as seguintes informações.",
+                qname: "Qual é o seu nome?",
+                qage: "Qual é a sua idade?",
+                qphone: "Qual é o seu telefone?",
+                qcountry: "Qual é o seu país?",
+                qaction: "Qual ação você ja tomou em relação a suas finanças?",
+                protection: "Proteção (beneficio em vida)",
+                accumulation: "Acumulação (planos de aposentadoria)",
+                leverage: "Alavancagem (plano com ajuda financeira)",
+                nothing: "Nenhuma ação ainda",
+                qincome: "Qual é o seu rendimento anual em dolares?",
+                sendbutton: "Enviar",
+                contenttitle: "Introdução a Financial Solutions",
+                socials: "Redes Sociais",
+                contact: "Contatos",
+                footer: "&copy; 2024 Geraldo Staziaki. Todos os direitos reservados."
+            },
+            es: {
+                quote: "El mejor momento para investir es hace 20 años",
+                since: "Desde 2000",
+                name: "Geraldo Staziaki",
+                description1: "Renombrado consultor financiero especializado en educación financiera, ha jugado un papel crucial en empoderar a familias e individuos para lograr sus objetivos financieros y construir una riqueza sólida para las generaciones futuras.",
+                description2: "Con un enfoque personalizado y analítico, Staziaki se sumerge profundamente en las necesidades financieras específicas de cada familia, proporcionando un análisis integral para identificar oportunidades de mejora y áreas de enfoque. 'Creo que la educación financiera es la clave para el éxito financiero a largo plazo. Mi misión es capacitar a las familias para que tomen decisiones informadas y estratégicas para asegurar un futuro financieramente saludable', dice Staziaki.",
+                cta: "Haz un click aquí para empezar",
+                questionnaire: "Por favor complete la siguiente información.",
+                qname: "¿Cuál es tu nombre?",
+                qage: "¿Cuál es tu edad?",
+                qphone: "¿Cuál es tu número de teléfono?",
+                qcountry: "¿Cuál es tu país?",
+                qaction: "¿Qué acción has tomado con respecto a tus finanzas?",
+                protection: "Protección",
+                accumulation: "Acumulación",
+                leverage: "Apalancamiento",
+                nothing: "Ninguna acción aún",
+                qincome: "¿Cuál es tu ingreso anual en dólares?",
+                sendbutton: "Enviar",
+                contenttitle: "Introducción a Financial Solutions",
+                socials: "Redes Sociales",
+                contact: "Contactos",
+                footer: "&copy; 2024 Geraldo Staziaki. Todos los derechos reservados."
+            }
+        };
+
+        $(document).ready(function() {
+
+            $('.small-button').on('click', function(e) {
+                e.preventDefault();
+                const language = $(this).data('language');
+                const langContent = content[language];
+                $('#quote-text-box').text(langContent.quote);
+                $('#since').text(langContent.since);
+                $('#name').text(langContent.name);
+                $('#description1').text(langContent.description1);
+                $('#description2').text(langContent.description2);
+                $('#cta-button span').text(langContent.cta);
+                $('#questionnaire').html(langContent.questionnaire);
+                $('#qname').html(langContent.qname);
+                $('#qage').html(langContent.qage);
+                $('#qphone').html(langContent.qphone);
+                $('#qcountry').html(langContent.qcountry);
+                $('#qaction').html(langContent.qaction);
+                $('#protection').html(langContent.protection);
+                $('#accumulation').html(langContent.accumulation);
+                $('#leverage').html(langContent.leverage);
+                $('#nothing').html(langContent.nothing);
+                $('#qincome').html(langContent.qincome);
+                $('#sendbutton').val(langContent.sendbutton);
+                $('#socials').html(langContent.socials);
+                $('#contact').html(langContent.contact);
+                $('#footer-text').html(langContent.footer);
+            });
+
+            $('.button').on('mousedown', function() {
+                $(this).addClass('active');
+            }).on('mouseup mouseleave', function() {
+                $(this).removeClass('active');
+            }).on('mouseenter', function() {
+                if ($(this).hasClass('no-active')) {
+                    $(this).removeClass('no-active');
+                }
+            }).on('mouseleave', function() {
+                if ($(this).hasClass('active')) {
+                    $(this).addClass('no-active');
+                }
+            });
+
+            $(document).on('mouseup', function() {
+                $('.button').removeClass('active');
+            });
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 25) {
+                    $('.scroll-to-top').fadeIn();
+                } else {
+                    $('.scroll-to-top').fadeOut();
+                }
+            });
+
+            $('.scroll-to-top').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    // Add your FullCalendar options here
+                    selectable: true,
+                    select: function(info) {
+                    console.log('Selected:', info);
+                    }
+                });
+                calendar.render();
+            });
+
+            $('#questionnaire-form').on('submit', function(event) {
+                event.preventDefault();
+                
+                var formData = {
+                    name: $('#name').val(),
+                    age: $('#age').val(),
+                    telephone: $('#telephone').val(),
+                    country: $('#country').val(),
+                    action: $('#action').val(),
+                    income: $('#income').val()
+                };
+                
+                localStorage.setItem('formData', JSON.stringify(formData));
+
+                alert('Form submitted successfully!');
+
+                this.reset();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

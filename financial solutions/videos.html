@@ -1,0 +1,188 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTRY WELCOME PAGE</title>
+    
+    <link rel="icon" href="assets/staziaki-favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="box">
+            <div class="header-left">
+                <a href="index.html" class="home-link">
+                    <img src="assets/staziaki-card-yellow-transparent.png" alt="Card" class="logo-card">
+                </a>
+            </div>
+            <div class="header-middle">
+                
+            </div>
+            <div class="header-right header-buttons">
+                <a href="#" class="small-button" data-language="pt">
+                    <span>Português</span>
+                </a>
+                <a href="#" class="small-button"  data-language="en">
+                    <span>English</span>
+                </a>
+                <a href="#" class="small-button"  data-language="es">
+                    <span>Español</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="element">
+        <a href="#" class="scroll-to-top">
+            <img src="assets/arrow.png" alt="↑">
+        </a>
+    </div>
+
+    <div class="box">
+        <div class="main-left column-orientated">
+            <ul id="video-list" class="form-box">
+                <li class="video-item selectable" data-video-url="https://www.youtube.com/embed/XShGYFXVy-g?si=4t4AENN8KgPamDdi" data-video-title="Introdução a Financial Solutions">Introdução a Financial Solutions</li>
+                <li class="video-item selectable" data-video-url="https://www.youtube.com/embed/jSMZoLjB9JE?si=oy61Yzb90xxL-oAa" data-video-title="Second Video Title">Second Video Title</li>
+                <li class="video-item selectable" data-video-url="https://www.youtube.com/embed/Rg4xJ-YliGo?si=ZxQGU0IKp7h4oee3" data-video-title="Third Video Title">Third Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Fourth Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Fifth Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Sixth Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Seventh Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Eighth Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Ninth Video Title</li>
+                <li class="video-item locked"><img src="assets/lock-icon.png" alt="Locked:"> Tenth Video Title</li>
+            </ul>
+            
+        </div>
+        <div class="main-right">
+            <div class="video-box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XShGYFXVy-g?si=4t4AENN8KgPamDdi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h1 id="video-title">Introdução a Financial Solutions</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p> </p>
+    </div>
+
+    <footer>
+        <div class="box">
+            <div class="footer-left">
+                <img src="assets/staziaki-card-white-transparent.png" alt="Card" class="logo-card">
+            </div>
+            <div class="footer-middle footer-buttons">
+                <h3 id="socials">Redes Sociais</h3>
+                <a href="https://www.instagram.com/geraldostaziaki/" class="minor-button">Instagram</a>
+                <a href="https://www.youtube.com/@EDUQUESEFINANCIAL" class="minor-button">Youtube</a>
+            </div>
+            <div class="footer-right footer-buttons">
+                <h3 id="contact">Contatos</h3>
+                <p>+1 (561) 929 9068</p>
+                <a href="gstaziaki@uniagrowth.com" class="minor-button">gstaziaki@uniagrowth.com</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p id="footer-text">&copy; 2024 Geraldo Staziaki. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="jquery.js"></script>
+    <script>
+
+        const content = {
+            en: {
+                
+                socials: "Social Media",
+                contact: "Contact",
+                footer: "&copy; 2024 Geraldo Staziaki. All rights reserved.",
+
+                videotitle: "Introduction to Financial Solutions"
+                
+            },
+            pt: {
+                
+                socials: "Redes Sociais",
+                contact: "Contatos",
+                footer: "&copy; 2024 Geraldo Staziaki. Todos os direitos reservados.",
+
+                videotitle: "Introdução a Financial Solutions"
+            },
+            es: {
+                
+                socials: "Redes Sociales",
+                contact: "Contactos",
+                footer: "&copy; 2024 Geraldo Staziaki. Todos los derechos reservados.",
+
+                videotitle: "Introducción a Financial Solutions"
+            }
+        };
+
+        $(document).ready(function() {
+
+            var headerHeight = $('header').outerHeight();
+            var containerTop = $('.container:first').offset().top;
+
+            // Scroll to the position of the division
+            $('html, body').animate({
+                scrollTop: containerTop - headerHeight
+            }, '500');
+
+            $('.small-button').on('click', function(e) {
+                e.preventDefault();
+                const language = $(this).data('language');
+                const langContent = content[language];
+                
+                $('#video-title').val(langContent.videotitle);
+                $('#socials').html(langContent.socials);
+                $('#contact').html(langContent.contact);
+                $('#footer-text').html(langContent.footer);
+                
+            });
+
+            $('.button').on('mousedown', function() {
+                $(this).addClass('active');
+            }).on('mouseup mouseleave', function() {
+                $(this).removeClass('active');
+            }).on('mouseenter', function() {
+                if ($(this).hasClass('no-active')) {
+                    $(this).removeClass('no-active');
+                }
+            }).on('mouseleave', function() {
+                if ($(this).hasClass('active')) {
+                    $(this).addClass('no-active');
+                }
+            });
+
+            $(document).on('mouseup', function() {
+                $('.button').removeClass('active');
+            });
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 150) {
+                    $('.scroll-to-top').fadeIn();
+                } else {
+                    $('.scroll-to-top').fadeOut();
+                }
+            });
+
+            $('.scroll-to-top').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
+
+            $('.video-item.selectable').click(function(){
+                var videoUrl = $(this).data('video-url');
+                var videoTitle = $(this).data('video-title');
+                
+                $('#video-player').attr('src', videoUrl);
+                $('#video-title').text(videoTitle);
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

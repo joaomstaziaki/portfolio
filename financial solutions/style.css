@@ -26,7 +26,6 @@ footer {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-
 header h1, h3, h5, p {
     margin: 0;
 }
@@ -58,6 +57,68 @@ footer h1, h3, h5, p {
     padding: 50px;
     padding-left: 60px;
     box-sizing: border-box;
+}
+
+.video-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    margin-right: 100px;
+    padding: 20px;
+    border: 1px;
+    border-color: #000000; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);  
+    background: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#video-list {
+    list-style-type: none;
+    background: rgba(104, 104, 104, 0.25);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow: auto;
+}
+
+.video-item {
+    padding: 10px;
+    
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    color: #000000;
+    outline: none;
+    cursor: pointer;
+}
+
+.video-item.locked {
+    color:#8e8e8e;
+    cursor: not-allowed;
+}
+
+.video-item.locked img {
+    width: 15px; 
+    height: auto; 
+}
+
+.video-item.selectable:hover {
+    color: #f0f0f0;
+}
+
+.video-item.selectable:active {
+    color: #d9a22a;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .header-left, .header-middle, .header-right {
@@ -229,14 +290,14 @@ footer h1, h3, h5, p {
     margin: 0 0 20px 20px;
     font-size: 300%;
     color: #163120;
-    text-align: right;
+    text-align: left;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .main-right h3 {
     margin: 0 0 20px 0;
     color: #163120;
-    text-align: right;
+    text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
@@ -260,6 +321,7 @@ footer h1, h3, h5, p {
     max-width: 1280px; /* Set maximum width */
     height: 420px; /* Maintain aspect ratio */
     padding-bottom: 40px;
+    justify-content: left;
 }
 
 .header-buttons {
@@ -375,7 +437,6 @@ form {
     background: rgba(104, 104, 104, 0.25); /* Semi-transparent background */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -396,19 +457,25 @@ input, select, textarea {
     font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     color: #686868;
+    outline: none;
 }
 
 button {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-input:hover, select:hover, textarea:hover, input:focus, select:focus, textarea:focus {
-    border-color: #000;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    color: #000;
+.input-group:hover label, .input-group:focus-within label {
+    color: #000000; 
 }
 
-label:hover {
-    color: #000;
+.input-group:hover input, .input-group:hover select, .input-group:hover textarea,
+.input-group:focus-within input, .input-group:focus-within select, .input-group:focus-within textarea,
+input:focus, select:focus, textarea:focus {
+    border-color: #000000; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    color: #000000; 
+}
 
+input, select, textarea {
+    color: #a9a9a9; 
 }

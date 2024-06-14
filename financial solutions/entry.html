@@ -46,42 +46,60 @@
             <form id="questionnaire-form" action="survey.php" method="post">
                 <h3 id="questionnaire">Por favor preencha as seguintes informações</h3>
                 
-                <label id="qname" for="name">Qual é o seu nome?</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label id="qage" for="age">Qual é a sua idade?</label>
-                <input type="number" id="age" name="age" required>
-                
-                <label id="qphone" for="telephone">Qual é o seu telefone?</label>
-                <input type="tel" id="telephone" name="telephone" required>
-                
-                <label id="qcountry" for="country">Qual é o seu país?</label>
-                <input type="text" id="country" name="country" required>
-                
-                <label for="qdoubt">Qual é a sua maior duvida e o motivo de seu contato?</label>
-                <textarea id="doubt" name="doubt" rows="4" cols="50"></textarea>
+                <div class="input-group">
+                    <label id="qname" for="name">Qual é o seu nome?</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-                <label for="qobjective">Qual é o seu objetivo financeiro no momento?</label>
-                <textarea id="objective" name="objective" rows="4" cols="50"></textarea>
+                <div class="input-group">
+                    <label id="qage" for="age">Qual é a sua idade?</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
 
-                <label id="qaction" for="action">Qual ação você ja tomou em relação a suas finanças?</label>
-                <select id="action" name="action" required>
-                    <option id="protection" value="protection">Proteção (beneficio em vida)</option>
-                    <option id="accumulation" value="accumulation">Acumulação (planos de aposentadoria)</option>
-                    <option id="leverage" value="leverage">Alavancagem (plano com ajuda financeira)</option>
-                    <option id="nothing" value="nothing">Nenhuma ação ainda</option>
-                </select>
+                <div class="input-group">
+                    <label id="qphone" for="telephone">Qual é o seu telefone?</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
 
-                <label id="qincome" for="income">Qual é o seu rendimento anual em dolares?</label>
-                <select id="income" name="income" required>
-                    <option id="twentyk">$20,000 - $50,000</option>
-                    <option id="fiftyk">$50,000 - $100,000</option>
-                    <option id="hundredk">$100,000 - $200,000</option>
-                    <option id="twohundredk">$200,000 +</option>
-                </select>
+                <div class="input-group">
+                    <label id="qcountry" for="country">Qual é o seu país?</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="qdoubt">Qual é a sua maior duvida e o motivo de seu contato?</label>
+                    <textarea id="doubt" name="doubt" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label id="qobjective">Qual é o seu objetivo financeiro no momento?</label>
+                    <textarea id="objective" name="objective" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label id="qaction" for="action">Qual ação você ja tomou em relação a suas finanças?</label>
+                    <select id="action" name="action" required>
+                        <option id="protection" value="protection">Proteção (beneficio em vida)</option>
+                        <option id="accumulation" value="accumulation">Acumulação (planos de aposentadoria)</option>
+                        <option id="leverage" value="leverage">Alavancagem (plano com ajuda financeira)</option>
+                        <option id="nothing" value="nothing">Nenhuma ação ainda</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label id="qincome" for="income">Qual é o seu rendimento anual em dolares?</label>
+                    <select id="income" name="income" required>
+                        <option id="twentyk">$20,000 - $50,000</option>
+                        <option id="fiftyk">$50,000 - $100,000</option>
+                        <option id="hundredk">$100,000 - $200,000</option>
+                        <option id="twohundredk">$200,000 +</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div id="calendar"></div>
+                </div>
                 
-                <div id="calendar"></div>
-
                 <button type="submit" class="large-button" id="sendbutton">
                     <span>Enviar</span>
                 </button>
@@ -90,8 +108,13 @@
             
         </div>
         <div class="main-right">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/XShGYFXVy-g?si=4t4AENN8KgPamDdi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <h1 id="contenttitle">Introdução a Financial Solutions</h1>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XShGYFXVy-g?si=4t4AENN8KgPamDdi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h1 id="video-title">Introdução a Financial Solutions</h1>
+                <a href="videos.html" class="large-button" id="next-button">
+                    <span>Proximos videos</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -134,6 +157,8 @@
                 qage: "What is your age?",
                 qphone: "What is your phone number?",
                 qcountry: "What is your country?",
+                qdoubt: "What is your biggest question and reason for contact?",
+                qobjective: "What is your financial objective at the moment?",
                 qaction: "What action have you taken in regards to your finances?",
                 protection: "Protection",
                 accumulation: "Accumulation",
@@ -141,7 +166,7 @@
                 nothing: "No action yet",
                 qincome: "What is your yearly income in dollars?",
                 sendbutton: "Send",
-                contenttitle: "Introduction to Financial Solutions"
+                videotitle: "Introduction to Financial Solutions"
                 
             },
             pt: {
@@ -154,6 +179,8 @@
                 qage: "Qual é a sua idade?",
                 qphone: "Qual é o seu telefone?",
                 qcountry: "Qual é o seu país?",
+                qdoubt: "Qual é a sua maior duvida e o motivo de seu contato?",
+                qobjective: "Qual é o seu objetivo financeiro no momento?",
                 qaction: "Qual ação você ja tomou em relação a suas finanças?",
                 protection: "Proteção (beneficio em vida)",
                 accumulation: "Acumulação (planos de aposentadoria)",
@@ -161,7 +188,7 @@
                 nothing: "Nenhuma ação ainda",
                 qincome: "Qual é o seu rendimento anual em dolares?",
                 sendbutton: "Enviar",
-                contenttitle: "Introdução a Financial Solutions"
+                videotitle: "Introdução a Financial Solutions"
             },
             es: {
                 
@@ -173,14 +200,16 @@
                 qage: "¿Cuál es tu edad?",
                 qphone: "¿Cuál es tu número de teléfono?",
                 qcountry: "¿Cuál es tu país?",
-                qaction: "¿Qué acción has tomado con respecto a tus finanzas?",
+                qdoubt: "¿Cuál es tu mayor duda y el motivo de tu contacto?",
+                qobjective: "¿Cuál es su objetivo financiero en este momento?",
+                qaction: "¿Qué medidas ha tomado ya con respecto a sus finanzas?",
                 protection: "Protección",
                 accumulation: "Acumulación",
                 leverage: "Apalancamiento",
                 nothing: "Ninguna acción aún",
                 qincome: "¿Cuál es tu ingreso anual en dólares?",
                 sendbutton: "Enviar",
-                contenttitle: "Introducción a Financial Solutions"
+                videotitle: "Introducción a Financial Solutions"
             }
         };
 
@@ -199,6 +228,7 @@
                 const language = $(this).data('language');
                 const langContent = content[language];
                 
+                $('#video-title').val(langContent.videotitle);
                 $('#socials').html(langContent.socials);
                 $('#contact').html(langContent.contact);
                 $('#footer-text').html(langContent.footer);
@@ -207,6 +237,8 @@
                 $('#qage').html(langContent.qage);
                 $('#qphone').html(langContent.qphone);
                 $('#qcountry').html(langContent.qcountry);
+                $('#qdoubt').html(langContent.qdoubt);
+                $('#qobjective').html(langContent.qobjective);
                 $('#qaction').html(langContent.qaction);
                 $('#protection').html(langContent.protection);
                 $('#accumulation').html(langContent.accumulation);
@@ -214,6 +246,7 @@
                 $('#nothing').html(langContent.nothing);
                 $('#qincome').html(langContent.qincome);
                 $('#sendbutton').val(langContent.sendbutton);
+                
             });
 
             $('.button').on('mousedown', function() {
@@ -260,23 +293,23 @@
             });
 
             $('#questionnaire-form').on('submit', function(event) {
-            event.preventDefault();
-            
-            var formData = {
-                name: $('#name').val(),
-                age: $('#age').val(),
-                telephone: $('#telephone').val(),
-                country: $('#country').val(),
-                action: $('#action').val(),
-                income: $('#income').val()
-            };
+                event.preventDefault();
+                
+                var formData = {
+                    name: $('#name').val(),
+                    age: $('#age').val(),
+                    telephone: $('#telephone').val(),
+                    country: $('#country').val(),
+                    action: $('#action').val(),
+                    income: $('#income').val()
+                };
+                
+                localStorage.setItem('formData', JSON.stringify(formData));
 
-            localStorage.setItem('formData', JSON.stringify(formData));
+                alert('Form submitted successfully!');
 
-            alert('Form submitted successfully!');
-
-            this.reset();
-        });
+                this.reset();
+            });
 
         });
 
