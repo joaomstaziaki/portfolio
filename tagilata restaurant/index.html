@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagliata Pagina de Entrada</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img class="logo-banner" src="assets/tagliata-wine-bg-logo-banner.png" at="tagliata logo banner">
+            <nav>
+                <ul>
+                    <li><a href="#section1">Section 1</a></li>
+                    <li><a href="#section2">Section 2</a></li>
+                    <li><a href="#section3">Section 3</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="section1" class="section">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img class="carousel-image" src="images/3X4A9479.jpg" alt="gnocchi">
+                <img class="carousel-image" src="images/3X4A9520.jpg" alt="shells">
+                <img class="carousel-image" src="images/3X4A9544.jpg" alt="margherita">
+                <img class="carousel-image" src="images/3X4A9565.jpg" alt="rolls">
+                <img class="carousel-image" src="images/3X4A9618.jpg" alt="calabresa">
+                <img class="carousel-image" src="images/3X4A9627.jpg" alt="meat lasagna">
+                <img class="carousel-image" src="images/3X4A9672.jpg" alt="baked lagagna">
+            </div>
+            <a class="carousel-control-prev" href="#">&#10094;</a>
+            <a class="carousel-control-next" href="#">&#10095;</a>
+        </div>
+    </section>
+    <section id="section2" class="section">
+        <h1>Section 2</h1>
+    </section>
+    <section id="section3" class="section">
+        <h1>Section 3</h1>
+    </section>
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            
+            let currentIndex = 0;
+            const images = $('.carousel-inner img');
+            const totalImages = images.length;
+            const carouselInner = $('.carousel-inner');
+            let interval;
+            const normalInterval = 5000;
+            const lastImageInterval = 10000;
+
+            function showImage(index) {
+                images.removeClass('current prev next');
+                images.eq(index).addClass('current');
+                if (index > 0) {
+                    images.eq(index - 1).addClass('prev');
+                }
+                if (index < totalImages - 1) {
+                    images.eq(index + 1).addClass('next');
+                }
+                const offset = -index * 100 + '%';
+                carouselInner.css('transform', 'translateX(' + offset + ')');
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % totalImages;
+                showImage(currentIndex);
+                resetInterval();
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                showImage(currentIndex);
+                resetInterval();
+            }
+
+            function resetInterval() {
+                clearInterval(interval);
+                const delay = (currentIndex === totalImages - 1) ? lastImageInterval : normalInterval;
+                interval = setInterval(nextImage, delay);
+            }
+
+            $('.carousel-control-next').click(function(e) {
+                e.preventDefault();
+                nextImage();
+            });
+
+            $('.carousel-control-prev').click(function(e) {
+                e.preventDefault();
+                prevImage();
+            });
+
+            interval = setInterval(nextImage, normalInterval);
+
+            $('nav ul li a').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 1000);
+            });
+
+            showImage(currentIndex);
+
+        });
+    </script>
+</body>
+</html>
