@@ -45,70 +45,7 @@
         <p>Footer Content</p>
     </footer>
     <script>
-        $(document).ready(function() {
-            
-            let currentIndex = 0;
-            const images = $('.carousel-inner img');
-            const totalImages = images.length;
-            const carouselInner = $('.carousel-inner');
-            let interval;
-            const normalInterval = 5000;
-            const lastImageInterval = 10000;
-
-            function showImage(index) {
-                images.removeClass('current prev next');
-                images.eq(index).addClass('current');
-                if (index > 0) {
-                    images.eq(index - 1).addClass('prev');
-                }
-                if (index < totalImages - 1) {
-                    images.eq(index + 1).addClass('next');
-                }
-                const offset = -index * 100 + '%';
-                carouselInner.css('transform', 'translateX(' + offset + ')');
-            }
-
-            function nextImage() {
-                currentIndex = (currentIndex + 1) % totalImages;
-                showImage(currentIndex);
-                resetInterval();
-            }
-
-            function prevImage() {
-                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-                showImage(currentIndex);
-                resetInterval();
-            }
-
-            function resetInterval() {
-                clearInterval(interval);
-                const delay = (currentIndex === totalImages - 1) ? lastImageInterval : normalInterval;
-                interval = setInterval(nextImage, delay);
-            }
-
-            $('.carousel-control-next').click(function(e) {
-                e.preventDefault();
-                nextImage();
-            });
-
-            $('.carousel-control-prev').click(function(e) {
-                e.preventDefault();
-                prevImage();
-            });
-
-            interval = setInterval(nextImage, normalInterval);
-
-            $('nav ul li a').on('click', function(e) {
-                e.preventDefault();
-                var target = $(this).attr('href');
-                $('html, body').animate({
-                    scrollTop: $(target).offset().top
-                }, 1000);
-            });
-
-            showImage(currentIndex);
-
-        });
+        
     </script>
 </body>
 </html>
