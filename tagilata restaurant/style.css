@@ -91,3 +91,47 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+.carousel {
+    width: 540px;
+    margin: 40px auto;
+    overflow: auto;
+}
+
+.slider-inner {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    padding: 3px;
+    border: #666 solid 1px;
+}
+
+.carousel-image {
+    display: none;
+    width: 500px;
+    height: auto;
+}
+
+.carousel-image.active {
+    display: inline-block;
+}
+
+.prev, .next {
+    float: left;
+    margin-top: 130px;
+    cursor: pointer;
+}
+
+.prev {
+    position: relative;
+    margin-right: -45px;
+    z-index: 100;
+}
+
+.right {
+    position: relative;
+    margin-left: -45px;
+    z-index: 100;
+}
