@@ -83,12 +83,20 @@ nav ul li a {
     color: #f0f0f0;
     text-decoration: none;
     font-size: 25px;
-    transition: .4s;
+    transition: .4s, color .1s;
 }
 
 nav ul li a:hover {
     position: relative;
     font-size: 30px;
+}
+
+nav ul li a.odd-nav:active {
+    color: #e00826;
+}
+
+nav ul li a.even-nav:active {
+    color: #093c1b;
 }
 
 .section {
@@ -190,11 +198,12 @@ footer {
 
 .prev, .next {
     position: absolute;
-    top: 20vh;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
     cursor: pointer;
     z-index: 100;
     user-select: none;
-    transition: opacity 0.5s ease-in-out;
 }
 
 .prev {
@@ -205,12 +214,35 @@ footer {
     right: 5%;
 }
 
+.prev img, .next img {
+    width: 25%;
+    height: auto;
+    transition: .4s;
+}
+
+.prev img:hover, .next img:hover {
+    width: 30%;
+    height: auto;
+}
+
 .prev img:active {
     content: url(images/arrow-left-green.png);
+    opacity: 0;
 }
-  
+
 .next img:active {
     content: url(images/arrow-right-red.png);
+    opacity: 0;
+}
+
+.prev img:active:before, .next img:active:before {
+    content: url(images/arrow-right-red.png);
+    opacity: 1;
+    transition: opacity .4s ease;
+}
+
+.prev img:active, .next img:active {
+    opacity: 1;
 }
 
 .menu-image {
