@@ -9,6 +9,9 @@ palette and colors:
     desaturated italy green 
     dark green
 
+fonts:
+
+
 */
 
 body, html {
@@ -16,19 +19,27 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background: #303030;
+    background: #f0f0f0;
+    scroll-behavior: smooth;
 }
 
 header {
     background: #620826;
-    color: white;
-    padding: 15px;
+    color: #f0f0f0;
+    padding: 2vh;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+h1, h3, h5, p {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; 
+}
+
+h2, h4 {
+    font-family: Snell Roundhand, cursive;
 }
 
 .header-container {
@@ -39,10 +50,9 @@ header {
     margin: 0 auto;
 }
 
-
 .logo-banner {
-    width:15%;
-    height:auto;
+    height:9vh;
+    width:auto;
 }
 
 nav ul {
@@ -55,83 +65,132 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 15px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 nav ul li a {
-    color: white;
+    color: #f0f0f0;
     text-decoration: none;
     font-size: 16px;
 }
 
 .section {
-    height: 100vh;
+    height: 87vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 80px; 
+    overflow: hidden; 
 }
 
 #section1 {
-    background: #303030;
+    padding-top: 13vh;
+    background-image: url(images/wood-bg.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
 
 #section2 {
-    background: #10622d;
+    background: #f0f0f0;
 }
 
 #section3 {
-    background: #303030;
+    background: white;
+    background-image: url(images/smoke-bg-2.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#section4 {
+    background: #f0f0f0;
+}
+
+.column {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+  
+#column1 {
+    background: #10622d;
+}
+
+#column2 {
+    background: white;
+}
+
+#column3 {
+    background: #e00826;
 }
 
 footer {
-    background: #10622d;
-    color: white;
+    background: #093c1b;
+    color: #f0f0f0;
     text-align: center;
     padding: 10px 0;
 }
 
 .carousel {
-    width: 540px;
-    margin: 40px auto;
-    overflow: auto;
-}
-
-.slider-inner {
-    width: 500px;
-    height: 300px;
+    width: 100vw;
+    height: 100%;
     position: relative;
     overflow: hidden;
-    float: left;
-    padding: 3px;
-    border: #666 solid 1px;
+}
+
+.carousel-outer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-image {
     display: none;
-    width: 500px;
-    height: auto;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
 }
 
 .carousel-image.active {
-    display: inline-block;
+    display: block;
 }
 
 .prev, .next {
-    float: left;
-    margin-top: 130px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
     cursor: pointer;
+    z-index: 100;
+    user-select: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
 }
-
+  
 .prev {
-    position: relative;
-    margin-right: -45px;
-    z-index: 100;
+    left: 5%;
+}
+  
+.next {
+    right: 5%;
 }
 
-.right {
-    position: relative;
-    margin-left: -45px;
-    z-index: 100;
+.menu-image {
+    display: block;
+    height: 100%;
+    width: auto;
 }
