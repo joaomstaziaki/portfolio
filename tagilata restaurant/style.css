@@ -32,14 +32,26 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    font-family: "museo", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
-h1, h3, h5, p {
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; 
+h1, h3, h5 {
+    font-family: "museo", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 h2, h4 {
-    font-family: Snell Roundhand, cursive;
+    font-family: "coffee-service", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: "rotunda-variable", sans-serif;
+    font-variation-settings: "wght" 400;
 }
 
 .header-container {
@@ -65,13 +77,18 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 15px;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 nav ul li a {
     color: #f0f0f0;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 25px;
+    transition: .4s;
+}
+
+nav ul li a:hover {
+    position: relative;
+    font-size: 30px;
 }
 
 .section {
@@ -118,14 +135,17 @@ nav ul li a {
   
 #column1 {
     background: #10622d;
+    color: white;
 }
 
 #column2 {
     background: white;
+    color: #e00826;
 }
 
 #column3 {
     background: #e00826;
+    color: white;
 }
 
 footer {
@@ -170,23 +190,27 @@ footer {
 
 .prev, .next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2em;
+    top: 20vh;
     cursor: pointer;
     z-index: 100;
     user-select: none;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
+    transition: opacity 0.5s ease-in-out;
 }
-  
+
 .prev {
     left: 5%;
 }
-  
+
 .next {
     right: 5%;
+}
+
+.prev img:active {
+    content: url(images/arrow-left-green.png);
+}
+  
+.next img:active {
+    content: url(images/arrow-right-red.png);
 }
 
 .menu-image {
