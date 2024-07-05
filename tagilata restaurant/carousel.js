@@ -30,11 +30,11 @@ $(document).ready(function(){
         prevprevImg.addClass('left').css('z-index', 1);
     }
 
-    var autoRotate = setInterval(rotateNext, 5000);
+    var autoRotate = setInterval(rotateNext, 2500);
 
     function resetTimer() {
         clearInterval(autoRotate);
-        autoRotate = setInterval(rotateNext, 5000);
+        autoRotate = setInterval(rotateNext, 2500);
     }
 
     $('.next').on('click', function(event){
@@ -47,5 +47,24 @@ $(document).ready(function(){
         event.preventDefault();
         rotatePrev();
         resetTimer();
+    });
+
+    let currentIndex = 0;
+    const images = $('.offer-images');
+    const totalImages = images.length;
+
+    function showImage(index) {
+        const offset = -index * 400; // 400 is the height of each image
+        $('.offer-carousel-inner').css('transform', 'translateY(' + offset + 'px)');
+    }
+
+    $('.offer-next').click(function() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+    });
+
+    $('.offer-prev').click(function() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
     });
 });

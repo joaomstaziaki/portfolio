@@ -41,7 +41,6 @@ header {
 h1, h3, h5 {
     font-family: "museo", serif;
     font-weight: bolder;
-    
     font-style: normal;
 }
 
@@ -56,17 +55,17 @@ h1 {
 }
 
 h2, h3 {
-    font-size: 2.75em;
+    font-size: 3em;
 }
 
 h4, h5 {
-    font-size: 2em;
+    font-size: 2.75em;
 }
 
 p {
     font-family: "rotunda-variable", sans-serif;
     font-variation-settings: "wght" 400;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .header-container {
@@ -112,7 +111,7 @@ nav ul li a.odd-nav:active {
 }
 
 nav ul li a.even-nav:active {
-    color: #093c1b;
+    color: #10622d;
 }
 
 .section {
@@ -273,10 +272,17 @@ footer {
     background-color:white;
 }
 
+.interior-container p {
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 35%;
+}
+
 .title-container {
-    
     background-color: white;
-    
 }
 
 .title-container img {
@@ -286,15 +292,59 @@ footer {
 }
 
 .title-container h1 {
-    color:black;
+    color: #9f1527;
     font-weight: 125%;
-    right: 20%;
+    line-height: 1;
+    margin-top: 15px;
+    margin-bottom: -10px;
+    transform: translateX(-50px);
+    text-shadow: 2px 2px 5px rgb(164, 164, 164);
 }
 
 .title-container h2 {
     color:#10622d;
     font-weight: 110%;
-    left: 20%;
+    font-size: 3.5em;
+    line-height: 1;
+    margin-top: 0px;
+    margin-bottom: 55px;
+    transform: translateX(150px);
+    text-shadow: 2px 2px 5px rgb(164, 164, 164);
+}
+
+.floating-text-box {
+    position: absolute;
+    transform: translate(175%, 100%);
+    background-color: #10622d; 
+    color: white;
+    padding-top: 0;
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+    box-shadow: 1px solid #000000;
+    text-decoration:none;
+    transition: all 0.3s ease;
+}
+
+.floating-text-box p {
+    transform: translateY(50%);
+    color: white;
+}
+
+.floating-text-box h5 {
+    transform: translateY(45%);
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}
+
+.foating-text-box:hover {
+    height:220px !important;
+    width:220px !important;
+}
+
+.foating-text-box:active {
+    background-color: #e00826 !important;
 }
 
 .column {
@@ -305,12 +355,21 @@ footer {
 }
 
 .column h1, h3, h5 {
-    outline: 2px solid;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    color: #10622d;
+}
+
+.column h2, h4 {
+    margin-top: -5%;
+    margin-bottom: 3%;
+    transform:scale(25%);
+    color: #9f1527;
 }
   
 #column1 {
-    background: #10622d;
-    color: white;
+    background: rgba(14, 120, 43, 0.5);
+    color:rgb(27, 43, 26)
 }
 
 #column2 {
@@ -318,12 +377,11 @@ footer {
     align-items: center;
     text-align: center;
     background: white;
-    color: #e00826;
 }
 
 #column3 {
-    background: #e00826;
-    color: white;
+    background: rgba(200, 11, 11, 0.5);
+    color: rgb(50, 16, 16);
 }
 
 .embed-container {
@@ -346,6 +404,81 @@ footer {
 .instagram-media iframe {
     height: 100%;
     width: auto;
+}
+
+.offer-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.offer-carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    transition: transform 0.5s ease;
+}
+
+.offer-images {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 100%;
+    width: auto;
+}
+
+.offer-prev, .offer-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.offer-prev {
+    left: 10px;
+}
+
+.offer-next {
+    right: 10px;
+}
+
+.offer-prev img, .offer-next img {
+    width: 10%;
+    height: auto;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.offer-prev img:hover, .offer-next img:hover {
+    width: 15%;
+    height: auto;
+}
+
+.offer-prev img:active {
+    content: url(images/arrow-left-green.png);
+    opacity: 0;
+}
+
+.offer-next img:active {
+    content: url(images/arrow-right-red.png);
+    opacity: 0;
+}
+
+.offer-prev img:active:before, .offer-next img:active:before {
+    content: url(images/arrow-right-red.png);
+    opacity: 1;
+    transition: opacity .4s ease;
+}
+
+.offer-prev img:active, .next img:active {
+    opacity: 1;
+    transition: opacity 0.4s ease;
 }
 
 .menu-container {
