@@ -103,7 +103,7 @@ nav ul li a {
 
 nav ul li a:hover {
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 nav ul li a.odd-nav:active {
@@ -125,7 +125,7 @@ nav ul li a.even-nav:active {
 
 #section1 {
     padding-top: 13vh;
-    background-image: url(images/wood-bg.png);
+    background-image: url(assets/wood-bg.png);
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,7 +142,7 @@ nav ul li a.even-nav:active {
 
 #section4 {
     background: white;
-    background-image: url(images/smoke-bg-2.png);
+    background-image: url(assets/smoke-bg-2.png);
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -150,6 +150,15 @@ nav ul li a.even-nav:active {
 }
 
 #section5 {
+    background: white;
+    background-image: url(assets/smoke-bg-3.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#section6 {
     background: #f0f0f0;
 }
 
@@ -191,6 +200,7 @@ footer {
     object-fit: contain;
     position: absolute;
     opacity: 0;
+    transition: all .15s ease;
 }
 
 .carousel-image.active {
@@ -246,17 +256,17 @@ footer {
 }
 
 .prev img:active {
-    content: url(images/arrow-left-green.png);
+    content: url(assets/arrow-left-green.png);
     opacity: 0;
 }
 
 .next img:active {
-    content: url(images/arrow-right-red.png);
+    content: url(assets/arrow-right-red.png);
     opacity: 0;
 }
 
 .prev img:active:before, .next img:active:before {
-    content: url(images/arrow-right-red.png);
+    content: url(assets/arrow-right-red.png);
     opacity: 1;
     transition: opacity .4s ease;
 }
@@ -314,7 +324,9 @@ footer {
 
 .floating-text-box {
     position: absolute;
-    transform: translate(175%, 100%);
+    top: 165%;
+    left: 70%;
+    transform: translate(-50%, -50%);
     background-color: #10622d; 
     color: white;
     padding-top: 0;
@@ -324,11 +336,15 @@ footer {
     box-shadow: 1px solid #000000;
     text-decoration:none;
     transition: all 0.3s ease;
+    transform-origin: center;
 }
 
 .floating-text-box p {
     transform: translateY(50%);
     color: white;
+    transition: font-size 0.3s ease;
+    font-size: 1.2em;
+    line-height: 16pt;
 }
 
 .floating-text-box h5 {
@@ -336,14 +352,24 @@ footer {
     text-align: center;
     font-size: 2em;
     color: white;
+    transition: font-size 0.3s ease;
 }
 
-.foating-text-box:hover {
-    height:220px !important;
-    width:220px !important;
+.floating-text-box:hover {
+    height:230px !important;
+    width:230px !important;
 }
 
-.foating-text-box:active {
+.floating-text-box:hover p {
+    font-size: 1.5em;
+    line-height: 20pt;
+}
+
+.floating-text-box:hover h5 {
+    font-size: 2.3em;
+}
+
+.floating-text-box:active {
     background-color: #e00826 !important;
 }
 
@@ -428,57 +454,53 @@ footer {
     align-items: left;
     height: 100%;
     width: auto;
+    z-index: -1;
 }
 
 .offer-prev, .offer-next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 0%;
     cursor: pointer;
 }
 
 .offer-prev {
-    left: 10px;
+    top: 5%;
 }
 
 .offer-next {
-    right: 10px;
+    bottom: 5%;
 }
 
 .offer-prev img, .offer-next img {
-    width: 10%;
+    z-index: 10;
+    width: 20%;
     height: auto;
     transition: width 0.4s ease, height 0.4s ease;
 }
 
 .offer-prev img:hover, .offer-next img:hover {
-    width: 15%;
+    width: 30%;
     height: auto;
 }
 
 .offer-prev img:active {
-    content: url(images/arrow-left-green.png);
-    opacity: 0;
+    content: url(assets/arrow-up-green.png);
+    opacity: 1;
 }
 
 .offer-next img:active {
-    content: url(images/arrow-right-red.png);
-    opacity: 0;
+    content: url(assets/arrow-down-red.png);
+    opacity: 1;
 }
 
 .offer-prev img:active:before, .offer-next img:active:before {
-    content: url(images/arrow-right-red.png);
     opacity: 1;
-    transition: opacity .4s ease;
 }
 
 .offer-prev img:active, .next img:active {
     opacity: 1;
-    transition: opacity 0.4s ease;
 }
 
 .menu-container {
@@ -486,20 +508,97 @@ footer {
     height: 100%;
     width: auto;
     overflow: hidden;
+    display: inline-block;
+}
+
+.menu-wrapper {
+    position: relative;
+    height: 100%;
+    width: auto;
+    white-space: nowrap;
 }
 
 .menu-image {
     position: relative;
+    display: inline-block;
     top: 0;
     height: 100%;
     width: auto;
     transition: transform 0.3s ease;
 }
 
-.back-menu {
-    transform: translateX(100%);
+.menu-magnifier {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    display: none;
 }
 
-.front-menu:hover + .back-menu {
-    transform: translateX(0);
+.menu-container:hover .menu-magnifier {
+    display: block;
+}
+
+.floating-text-box-2 {
+    position: absolute;
+    top: 365%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #e00826; 
+    color: white;
+    padding-top: 0;
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+    box-shadow: 1px solid #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.floating-text-box-2 p {
+    transform: translateY(50%);
+    color: white;
+    transition: font-size 0.3s ease;
+    font-size: 1.2em;
+    line-height: 16pt;
+}
+
+.floating-text-box-2 h5 {
+    transform: translateY(45%);
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    transition: font-size 0.3s ease;
+}
+
+.floating-text-box-2:hover {
+    height:230px !important;
+    width:230px !important;
+}
+
+.floating-text-box-2:hover p {
+    font-size: 1.5em;
+    line-height: 20pt;
+}
+
+.floating-text-box-2:hover h5 {
+    font-size: 2.3em;
+}
+
+.floating-text-box-2:active {
+    background-color: #10622d !important;
+}
+
+.order h2 {
+    color:#620826;
+    text-shadow: 2px 2px 4px rgb(138, 138, 138);
+}
+
+.contact-info h2 {
+    color:#10622d;
+    text-shadow: 2px 2px 4px rgb(138, 138, 138);
 }

@@ -5,7 +5,7 @@ $(document).ready(function(){
         var prevImg = currentImg.prev().length ? currentImg.prev() : $('.carousel-image').last();
         var nextImg = currentImg.next().length ? currentImg.next() : $('.carousel-image').first();
         var nextnextImg = nextImg.next().length ? nextImg.next() : $('.carousel-image').first();
-
+        
         prevImg.removeClass('left').css('z-index', -10);
         currentImg.removeClass('active').css('z-index', -10);
         nextImg.removeClass('right').css('z-index', -10);
@@ -30,11 +30,11 @@ $(document).ready(function(){
         prevprevImg.addClass('left').css('z-index', 1);
     }
 
-    var autoRotate = setInterval(rotateNext, 2500);
+    var autoRotate = setInterval(rotateNext, 3500);
 
     function resetTimer() {
         clearInterval(autoRotate);
-        autoRotate = setInterval(rotateNext, 2500);
+        autoRotate = setInterval(rotateNext, 3500);
     }
 
     $('.next').on('click', function(event){
@@ -52,19 +52,38 @@ $(document).ready(function(){
     let currentIndex = 0;
     const images = $('.offer-images');
     const totalImages = images.length;
+    let intervalTime = 3000;
+    let interval;
+
+    function getImageHeight() {
+        return $('.offer-images').first().height();
+    }
 
     function showImage(index) {
-        const offset = -index * 400; // 400 is the height of each image
+        const offset = -index * getImageHeight();
         $('.offer-carousel-inner').css('transform', 'translateY(' + offset + 'px)');
+    }
+
+    function startInterval() {
+        clearInterval(interval);
+        interval = setInterval(function() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        }, intervalTime);
     }
 
     $('.offer-next').click(function() {
         currentIndex = (currentIndex + 1) % totalImages;
         showImage(currentIndex);
+        startInterval();
     });
 
     $('.offer-prev').click(function() {
         currentIndex = (currentIndex - 1 + totalImages) % totalImages;
         showImage(currentIndex);
+        startInterval();
     });
+
+    startInterval();
+
 });
