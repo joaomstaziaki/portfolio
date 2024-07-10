@@ -593,12 +593,36 @@ footer {
     background-color: #10622d !important;
 }
 
-.order h2 {
+.order {
     color:#620826;
     text-shadow: 2px 2px 4px rgb(138, 138, 138);
+}
+
+.ifood-logo {
+    height: 60%;
+    width: auto;
+    transition: all .3s;
+}
+
+.ifood-logo:hover {
+    height: 70%;
+    width: auto;
 }
 
 .contact-info h2 {
     color:#10622d;
     text-shadow: 2px 2px 4px rgb(138, 138, 138);
 }
+
+.contact-info p a {
+    text-decoration: none;
+    color: rgb(198, 198, 198);
+    transition: all .3s;
+}
+
+.contact-info p a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
