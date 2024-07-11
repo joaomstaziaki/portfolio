@@ -59,6 +59,14 @@ footer h1, h3, h5, p {
     box-sizing: border-box;
 }
 
+.right-orientated {
+    display: flex;
+    flex-direction: right;
+    align-items: right;
+    justify-content: right;
+    box-sizing: border-box;
+}
+
 .video-box {
     display: flex;
     flex-direction: column;
@@ -87,7 +95,6 @@ footer h1, h3, h5, p {
 
 .video-item {
     padding: 10px;
-    
     border-radius: 5px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -436,11 +443,12 @@ footer h1, h3, h5, p {
 form {
     background: rgba(104, 104, 104, 0.25); /* Semi-transparent background */
     padding: 30px;
-    border-radius: 10px;
-    display: flex;
     flex-direction: column;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow: auto;
+    max-width: 125%;
+    max-height: 125%;
+    justify-content: right;
 }
 
 label {
